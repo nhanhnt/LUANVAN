@@ -1,0 +1,13 @@
+	<%
+						dmcon.setDmcha(Integer.parseInt(dmcha.getdmcha(new Getdmcha()).get_return()[i].getId_danhmuc()));
+						GetdmconResponse redmcon = dmconstub.getdmcon(dmcon);
+						for (int j = 0; j < redmcon.get_return().length; j++) {
+					%>
+						<div class="panel-body">
+							<ul>
+								<li><a href="#"><%=redmcon.get_return()[i].getTendanhmuc() %></a></li>
+							</ul>
+						</div>
+					<%
+						}
+					%>
