@@ -1,13 +1,250 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.Catch"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="com.shop.services.*"%>
+<%@page import="com.shop.services.SanphamctStub.*"%>
+<%@page import="com.shop.services.SanphamctStub.Getspct"%>
+<%@page import="java.text.NumberFormat"%>
+<%
+	SanphamctStub spstub = new SanphamctStub();
+	Getspct sp = new Getspct();
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/prettyPhoto.css" rel="stylesheet">
+<link href="css/price-range.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/ico/favicon.ico">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/price-range.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+	<jsp:include page="include/header.jsp"></jsp:include>
+
+	<!-- ------------------------------------ -->
+
 	<%
-						dmcon.setDmcha(Integer.parseInt(dmcha.getdmcha(new Getdmcha()).get_return()[i].getId_danhmuc()));
-						GetdmconResponse redmcon = dmconstub.getdmcon(dmcon);
-						for (int j = 0; j < redmcon.get_return().length; j++) {
-					%>
-						<div class="panel-body">
-							<ul>
-								<li><a href="#"><%=redmcon.get_return()[i].getTendanhmuc() %></a></li>
-							</ul>
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setMinimumIntegerDigits(0);
+		sp.setId_sp(Integer.parseInt(request.getParameter("idsp")));
+		GetspctResponse ress = spstub.getspct(sp);
+		for (int i = 0; i < ress.get_return().length; i++) {
+	%>
+
+
+	<section id="slider"><!--slider-->
+	<div class="container">
+		<div class="row">
+			<jsp:include page="include/catelogy.jsp"></jsp:include>
+			<div class="col-sm-9 padding-right">
+				<div class="product-details">
+					<!--product-details-->
+					<div class="col-sm-5">
+						<div class="view-product">
+							<img src="<%=ress.get_return()[i].getHinhanh()%>.jpg" alt="" />
+
 						</div>
-					<%
-						}
-					%>
+
+					</div>
+					<div class="col-sm-7">
+						<div class="product-information">
+							<!--/product-information-->
+							<img src="images/product-details/new.jpg" class="newarrival"
+								alt="" />
+							<h2><%=ress.get_return()[i].getTensanpham()%></h2>
+							<p>
+								Mã sản phẩm:
+								<%=ress.get_return()[i].getId_sanpham()%></p>
+							<span> <span><%=nf.format(Math.round(ress.get_return()[i].getDongia()))%>
+									VNĐ</span>
+								<button type="button" class="btn btn-fefault cart">
+									<i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
+								</button>
+							</span>
+							<p>
+								<b>Số lượng:</b>
+								<%=ress.get_return()[i].getSoluong()%>
+								sản phẩm
+							</p>
+							<p>
+								<b>Giảm giá:</b>
+								<%=ress.get_return()[i].getGiamgia()%>
+								%
+							</p>
+							<a href=""><img src="images/product-details/share.png"
+								class="share img-responsive" alt="" /></a>
+						</div>
+						<!--/product-information-->
+					</div>
+				</div>
+				<!--/product-details-->
+
+				<div class="category-tab shop-details-tab">
+					<!--category-tab-->
+					<div class="col-sm-12">
+						<ul class="nav nav-tabs">
+							<li><a href="#details" data-toggle="tab">Chi tiết</a></li>
+							<li class="active"><a href="#reviews" data-toggle="tab">Phản
+									hồi</a></li>
+						</ul>
+					</div>
+					<div class="tab-content">
+						<div class="tab-pane fade " id="details">
+							<div class="col-sm-12">
+								<p><%=ress.get_return()[i].getMota()%></p>
+							</div>
+						</div>
+						<div class="tab-pane fade active in" id="reviews">
+							<div class="col-sm-12">
+								<ul>
+									<li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
+									<li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
+									<li><a href=""><i class="fa fa-calendar-o"></i>31 DEC
+											2014</a></li>
+								</ul>
+								<p>Quý khách có thể gửi yêu cầu bất cứ lúc hoặc liên hệ bộ phận Chăm sóc khách hàng
+									theo số Hotline 1900 1900 (1000 VND/ phút) trong các giờ làm
+									việc sau: Thứ Hai - Thứ Sáu: từ 7h đến 20h Thứ Bảy: từ 7h đến
+									18h Chủ Nhật và ngày lễ: từ 8h đến 17h rất hân hạnh được
+									hỗ trợ quý khách..</p>
+								<p>
+									<b>Gửi thông tin phản hồi</b>
+								</p>
+
+								<form action="#">
+									<span> <input type="text" placeholder="Tên khách hàng" /> <input
+										type="email" placeholder="Địa chỉ Email" />
+									</span>
+									<textarea name=""></textarea>
+									<b>Rating: </b> <img src="images/product-details/rating.png"
+										alt="" />
+									<button type="button" class="btn btn-default pull-right">
+										Submit</button>
+								</form>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!--/category-tab-->
+				
+				<%
+					}
+				%>
+
+			</div>
+		</div>
+	</div>
+	</section>
+
+
+
+
+
+	<!-- ------------------------------------ -->
+	<jsp:include page="include/footer.jsp"></jsp:include>
+</body>
+</html>
+
+
+
+
+-------------------------------------------------------------------------
+product
+<div class="choose">
+						<ul class="nav nav-pills nav-justified">
+							<li><a href="detail.html?idsp=<%=ress.get_return()[i].getId_sanpham()%>" id="submit"><i class="fa fa-plus-square"></i>Xem chi tiết</a></li>
+						</ul>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					sạias
+					
+					
+					
+					
+					package com.shop.controller;
+
+import java.text.NumberFormat;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.shop.services.SanphamctStub;
+import com.shop.services.SanphamctStub.Getspct;
+import com.shop.services.SanphamctStub.GetspctResponse;
+
+@Controller
+public class DetailController {
+
+	@RequestMapping("/detail.html")
+	protected ModelAndView detail() {
+		ModelAndView mv = new ModelAndView("detail");
+		String hinhanh = "";
+		String tensanpham = "";
+		String gia = "";
+		String soluong = "";
+		String giamgia = "";
+		String chitiet = "";
+
+		try {
+			SanphamctStub spstub = new SanphamctStub();
+			Getspct sp = new Getspct();
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumIntegerDigits(0);
+			sp.setId_sp(Integer.parseInt("1"));
+			GetspctResponse ress = spstub.getspct(sp);
+			for (int i = 0; i < ress.get_return().length; i++) {
+				hinhanh = ress.get_return()[i].getHinhanh();
+				tensanpham = ress.get_return()[i].getTensanpham();
+				gia = nf.format(Math.round(ress.get_return()[i].getDongia()));
+				soluong = Integer.toString(ress.get_return()[i].getSoluong());
+				giamgia = Integer.toString(ress.get_return()[i].getGiamgia());
+				chitiet = ress.get_return()[i].getMota();
+
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		String msg = "Thông báo";
+		String idsp="aaaaaaaaaaaaaaaa";
+		mv.addObject(idsp, idsp);
+		mv.addObject(msg, msg);
+		mv.addObject(hinhanh, hinhanh);
+		mv.addObject(tensanpham, tensanpham);
+		mv.addObject(gia, gia);
+		mv.addObject(soluong, soluong);
+		mv.addObject(giamgia, giamgia);
+		mv.addObject(chitiet, chitiet);
+		return mv;
+	}
+
+}
+					

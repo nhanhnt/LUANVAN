@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
 
 
 </head>
@@ -16,83 +16,82 @@
 				<div class="col-sm-2">
 					<div class="companyinfo">
 						<h2>
-							<span>e</span>-shopper
+							<span>LV</span>-shopper
 						</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-							elit,sed do eiusmod tempor</p>
+						<p>Tinh khiết, tràn trề cảm xúc - Đó không chỉ là cảm nhận về các thiết kế, mà còn là về xúc cảm của người mặc chúng!!!</p>
 					</div>
 				</div>
 				<div class="col-sm-7">
 					<div class="col-sm-3">
 						<div class="video-gallery text-center">
-							<a href="#">
+							<a href="https://www.youtube.com/watch?v=ILdOQVfsDhY">
 								<div class="iframe-img">
-									<img src="images/home/iframe1.png" alt="" />
+									<img src="/luanvan_shop/images/home/iframe1.png" alt="" />
 								</div>
 								<div class="overlay-icon">
 									<i class="fa fa-play-circle-o"></i>
 								</div>
 							</a>
-							<p>Circle of Hands</p>
-							<h2>24 DEC 2014</h2>
+							<p>Versace Medusa</p>
+							<h2>Nữ quỷ Medusa trong thần thoại Hy Lạp</h2>
 						</div>
 					</div>
 
 					<div class="col-sm-3">
 						<div class="video-gallery text-center">
-							<a href="#">
+							<a href="https://www.youtube.com/watch?v=20cxDfJ9t4Y">
 								<div class="iframe-img">
-									<img src="images/home/iframe2.png" alt="" />
+									<img src="/luanvan_shop/images/home/iframe2.png" alt="" />
 								</div>
 								<div class="overlay-icon">
 									<i class="fa fa-play-circle-o"></i>
 								</div>
 							</a>
-							<p>Circle of Hands</p>
-							<h2>24 DEC 2014</h2>
+							<p> Louis Vuitton</p>
+							<h2>Monogram Canvas Logo của Louis Vuitton</h2>
 						</div>
 					</div>
 
 					<div class="col-sm-3">
 						<div class="video-gallery text-center">
-							<a href="#">
+							<a href="https://www.youtube.com/watch?v=pq4HWfZ_nO0">
 								<div class="iframe-img">
-									<img src="images/home/iframe3.png" alt="" />
+									<img src="/luanvan_shop/images/home/iframe3.png" alt="" />
 								</div>
 								<div class="overlay-icon">
 									<i class="fa fa-play-circle-o"></i>
 								</div>
 							</a>
-							<p>Circle of Hands</p>
-							<h2>24 DEC 2014</h2>
+							<p>Hermes</p>
+							<h2> Logo đỉnh cao của làng thời trang</h2>
 						</div>
 					</div>
 
 					<div class="col-sm-3">
 						<div class="video-gallery text-center">
-							<a href="#">
+							<a href="https://www.youtube.com/watch?v=mOJTZ8zun4M#">
 								<div class="iframe-img">
-									<img src="images/home/iframe4.png" alt="" />
+									<img src="/luanvan_shop/images/home/iframe4.png" alt="" />
 								</div>
 								<div class="overlay-icon">
 									<i class="fa fa-play-circle-o"></i>
 								</div>
 							</a>
-							<p>Circle of Hands</p>
-							<h2>24 DEC 2014</h2>
+							<p>Chanel</p>
+							<h2>Hai chữ "C" lồng ghép thương hiệu thời trang quyền lực nhất thế giới</h2>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="address">
-						<img src="images/home/map.png" alt="" />
-						<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+						<img src="/luanvan_shop/images/home/map.png" alt="" />
+						<p>Thời trang có thể mua được nhưng phong cách phải là điều sẵn có(^_^)</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	<!-- 
 	<div class="footer-widget">
 		<div class="container">
 			<div class="row">
@@ -163,15 +162,14 @@
 			</div>
 		</div>
 	</div>
-
+ -->
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="row">
-				<p class="pull-left">Copyright Â© 2013 E-SHOPPER Inc. All rights
-					reserved.</p>
+				<p class="pull-left">Copyright 2016 LV-SHOPPER </p>
 				<p class="pull-right">
 					Designed by <span><a target="_blank"
-						href="http://www.themeum.com">Themeum</a></span>
+						href="http://localhost:8080/luanvan_shop/index.html">Nhanhnt</a></span>
 				</p>
 			</div>
 		</div>

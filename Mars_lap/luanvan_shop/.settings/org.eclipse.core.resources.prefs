@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/save=UTF-8
+encoding//WebContent/WEB-INF/save_detail=UTF-8
+encoding//src/com/shop/controller/AccountController.java=UTF-8
 encoding//src/com/shop/controller/IndexController.java=UTF-8
 encoding//src/com/shop/test/check.java=UTF-8

@@ -15,7 +15,7 @@
 		/> <mvc:resources location="/resources/" mapping="/resources/"></mvc:resources> -->
 
 	<context:component-scan base-package="com.shop.controller" />
-
+	<mvc:annotation-driven/>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"

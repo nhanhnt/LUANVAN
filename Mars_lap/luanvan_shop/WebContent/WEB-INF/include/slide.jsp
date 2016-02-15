@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
 
 
 </head>
@@ -26,14 +26,14 @@
 						<div class="item active">
 							<div class="col-sm-6">
 								<h1>
-									<span>E</span>-SHOPPER
+									<span>LV</span>-SHOPPER
 								</h1>
-								<h2>Free E-Commerce Template</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua.</p>
+								<h2>Khuyến mãi đặc biệt</h2>
+								<p>Giảm giá siêu khuyến mãi - Giảm 50% với trọn bộ sản phẩm</p>
+								<!-- 
 								<button type="button" class="btn btn-default get">Get
 									it now</button>
+								 -->
 							</div>
 							<div class="col-sm-6">
 								<img src="images/home/girl1.jpg" class="girl img-responsive"
@@ -44,14 +44,14 @@
 						<div class="item">
 							<div class="col-sm-6">
 								<h1>
-									<span>E</span>-SHOPPER
+									<span>LV</span>-SHOPPER
 								</h1>
-								<h2>100% Responsive Design</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua.</p>
+								<h2>Khuyến mãi đặc biệt</h2>
+								<p>Giảm giá siêu khuyến mãi - Giảm 50% với trọn bộ sản phẩm</p>
+								<!--  
 								<button type="button" class="btn btn-default get">Get
 									it now</button>
+								-->
 							</div>
 							<div class="col-sm-6">
 								<img src="images/home/girl2.jpg" class="girl img-responsive"
@@ -63,14 +63,14 @@
 						<div class="item">
 							<div class="col-sm-6">
 								<h1>
-									<span>E</span>-SHOPPER
+									<span>LV</span>-SHOPPER
 								</h1>
-								<h2>Free Ecommerce Template</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua.</p>
+								<h2>Khuyến mãi đặc biệt</h2>
+								<p>Giảm giá siêu khuyến mãi - Giảm 50% với trọn bộ sản phẩm</p>
+								<!-- 
 								<button type="button" class="btn btn-default get">Get
-									it now</button>
+									it now</button>#
+								-->
 							</div>
 							<div class="col-sm-6">
 								<img src="images/home/girl3.jpg" class="girl img-responsive"

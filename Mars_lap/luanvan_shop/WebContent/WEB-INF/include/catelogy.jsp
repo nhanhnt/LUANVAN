@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
 
 </head>
 
@@ -45,7 +45,7 @@
 					%>
 						<div class="panel-body">
 							<ul>
-								<li><a href="index.html?iddm=<%=redmcon.get_return()[j].getId_danhmuc()%>"><%=redmcon.get_return()[j].getTendanhmuc() %></a></li>
+								<li><a href="/luanvan_shop/index.html?iddm=<%=redmcon.get_return()[j].getId_danhmuc()%>"><%=redmcon.get_return()[j].getTendanhmuc() %></a></li>
 							</ul>
 						</div>
 					<%
@@ -59,39 +59,12 @@
 			</div>
 			<!--/category-products-->
 
-			<div class="brands_products">
-				<!--brands_products-->
-				<h2>Brands</h2>
-				<div class="brands-name">
-					<ul class="nav nav-pills nav-stacked">
-						<li><a href="#"> <span class="pull-right">(50)</span>Acne
-						</a></li>
-						<li><a href="#"> <span class="pull-right">(56)</span>Grüne
-								Erde
-						</a></li>
-						<li><a href="#"> <span class="pull-right">(27)</span>Albiro
-						</a></li>
-						<li><a href="#"> <span class="pull-right">(32)</span>Ronhill
-						</a></li>
-						<li><a href="#"> <span class="pull-right">(5)</span>Oddmolly
-						</a></li>
-						<li><a href="#"> <span class="pull-right">(9)</span>Boudestijn
-						</a></li>
-						<li><a href="#"> <span class="pull-right">(4)</span>Rösch
-								creative culture
-						</a></li>
-					</ul>
-				</div>
-			</div>
-			<!--/brands_products-->
-
-
 			<div class="shipping text-center">
 				<!--shipping-->
-				<img src="images/home/shipping.jpg" alt="" />
+				<img src="/luanvan_shop/images/home/shipping.jpg" alt="" />
 			</div>
 			<!--/shipping-->
-
+			<div style="clear: both;margin-bottom: 40px"></div>
 		</div>
 	</div>
 

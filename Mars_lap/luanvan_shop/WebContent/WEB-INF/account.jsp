@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Thời trang - LVShopper</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -34,29 +34,33 @@
 			<div class="col-sm-4 col-sm-offset-1">
 				<div class="login-form">
 					<!--login form-->
-					<h2>Login to your account</h2>
-					<form action="#">
-						<input type="text" placeholder="Name" /> <input type="email"
-							placeholder="Email Address" /> <span> <input
-							type="checkbox" class="checkbox"> Keep me signed in
+					<h2>Đăng nhập hệ thống</h2>
+					<form action="/luanvan_shop/account.html" method="post">
+					<input type="hidden" value="login" name="action" />
+						<input type="text" placeholder="Tài khoản" name="tkdangnhap" /> <input
+							type="password" placeholder="Mật khẩu" name="mkdangnhap"/> <span> <input
+							type="checkbox" class="checkbox"> Duy trì đăng nhập
 						</span>
-						<button type="submit" class="btn btn-default">Login</button>
+						<p style="color: red">${errordn}</p>
+						<button type="submit" class="btn btn-default">Đăng nhập</button>
 					</form>
 				</div>
 				<!--/login form-->
 			</div>
 			<div class="col-sm-1">
-				<h2 class="or">OR</h2>
+				<h2 class="or">HOẶC</h2>
 			</div>
 			<div class="col-sm-4">
 				<div class="signup-form">
 					<!--sign up form-->
-					<h2>New User Signup!</h2>
-					<form action="#">
-						<input type="text" placeholder="Name" /> <input type="email"
-							placeholder="Email Address" /> <input type="password"
-							placeholder="Password" />
-						<button type="submit" class="btn btn-default">Signup</button>
+					<h2>Đăng ký thành viên</h2>
+					<form action="/luanvan_shop/account.html" method="post">
+						<input type="hidden" value="registry" name="action" /> <input
+							type="text" placeholder="Tài khoản" name="taikhoan" value="${taikhoan}" /> <input
+							type="email" placeholder="Email" name="email" value="${email}"/> <input
+							type="password" placeholder="Mật khẩu" name="matkhau" value="${matkhau}"/>
+						<p style="color: red">${error}</p>
+						<button type="submit1" class="btn btn-default">Đăng ký</button>
 					</form>
 				</div>
 				<!--/sign up form-->

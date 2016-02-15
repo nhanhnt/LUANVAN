@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Thời trang - LVShopper</title>
 </head>
 <body>
 	<header id="header"><!--header-->
@@ -16,7 +16,7 @@
 					<div class="contactinfo">
 						<ul class="nav nav-pills">
 							<li><a href="#"><i class="fa fa-phone"></i> 054.3999999
-									</a></li>
+							</a></li>
 							<li><a href="#"><i class="fa fa-envelope"></i>
 									lv_shopper@gmail.com </a></li>
 						</ul>
@@ -33,21 +33,27 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="logo pull-left">
-						<a href="index.jsp"><img src="images/home/logo.png" alt="" /></a>
+						<a href="/luanvan_shop/index.html"><img
+							src="/luanvan_shop/images/home/logo.png" alt="" /></a>
 					</div>
-					
+
 				</div>
 				<div class="col-sm-8">
 					<div class="shop-menu pull-right">
 						<ul class="nav navbar-nav">
-							<li><a href="account.jsp"><i class="fa fa-user"></i> Account</a></li>
+							<li><a href="/luanvan_shop/account.html" onclick="${account_display}"><i class="fa fa-user"></i>
+									<%=session.getAttribute("username")%></a></li>
+							<!--  
 							<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 							<li><a href="checkout.html"><i class="fa fa-crosshairs"></i>
 									Checkout</a></li>
-							<li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i>
+							 -->
+							<li><a href="/luanvan_shop/cart.html"><i class="fa fa-shopping-cart"></i>
 									Cart</a></li>
-							<li><a href="account.jsp"><i class="fa fa-lock"></i>
-									Login</a></li>
+							<li style="display: ${login_display};"><a href="/luanvan_shop/account.html"><i
+									class="fa fa-lock"></i> Login</a></li>
+							<li style="display: ${logout_display};"><a href="/luanvan_shop/account.html/logout"><i
+									class="fa fa-lock"></i> Logout</a></li>
 						</ul>
 					</div>
 				</div>
@@ -71,7 +77,8 @@
 					</div>
 					<div class="mainmenu pull-left">
 						<ul class="nav navbar-nav collapse navbar-collapse">
-							<li><a href="index.html" class="active">Home</a></li>
+							<li><a href="/luanvan_shop/index.html" class="active">Home</a></li>
+							<!-- 
 							<li class="dropdown"><a href="#">Shop<i
 									class="fa fa-angle-down"></i></a>
 								<ul role="menu" class="sub-menu">
@@ -89,6 +96,7 @@
 								</ul></li>
 							<li><a href="404.html">404</a></li>
 							<li><a href="contact-us.html">Contact</a></li>
+							 -->
 						</ul>
 					</div>
 				</div>

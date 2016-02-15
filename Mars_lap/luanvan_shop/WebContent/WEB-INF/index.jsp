@@ -28,7 +28,7 @@
 <script src="js/jquery.prettyPhoto.js"></script>
 <script src="js/main.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Thời trang - LVShopper</title>
 
 
 
@@ -53,7 +53,7 @@
 	<!-- 
 	<h1>${msg}</h1>
 	<h1>${msgservices}</h1>
-	
+
 	<table cellpadding="2" cellspacing="2" border="1">
 		<tr>
 			<th>id_danhmuc</th>
