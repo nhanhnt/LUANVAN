@@ -48,7 +48,7 @@
 							<li><a href="checkout.html"><i class="fa fa-crosshairs"></i>
 									Checkout</a></li>
 							 -->
-							<li><a href="/luanvan_shop/cart.html"><i class="fa fa-shopping-cart"></i>
+							<li><a href="/luanvan_shop/cart.html" onclick="${cart_display}"><i class="fa fa-shopping-cart"></i>
 									Cart</a></li>
 							<li style="display: ${login_display};"><a href="/luanvan_shop/account.html"><i
 									class="fa fa-lock"></i> Login</a></li>

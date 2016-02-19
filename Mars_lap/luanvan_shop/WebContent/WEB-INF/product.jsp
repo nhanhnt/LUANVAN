@@ -14,6 +14,7 @@ Getsp sp=new Getsp();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Thời trang - LVShopper</title>
+<!-- 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -22,6 +23,13 @@ Getsp sp=new Getsp();
 <link href="css/main.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
 <link rel="shortcut icon" href="images/ico/favicon.ico">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/price-range.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/main.js"></script>
+ -->
 </head>
 <body>
 	<div class="col-sm-9 padding-right">
@@ -47,17 +55,17 @@ Getsp sp=new Getsp();
 				<div class="product-image-wrapper">
 					<div class="single-products">
 						<div class="productinfo text-center">
-							<img src="<%=ress.get_return()[i].getHinhanh() %>.jpg" alt="" />
+							<img src="/luanvan_shop/<%=ress.get_return()[i].getHinhanh() %>.jpg" alt="" />
 							<h2><%=nf.format(Math.round(ress.get_return()[i].getDongia())) %> VNĐ</h2>
 							<p><%=ress.get_return()[i].getTensanpham() %></p>
-							<a href="cart.html" class="btn btn-default add-to-cart"><i
+							<a href="/luanvan_shop/index.html/<%=ress.get_return()[i].getId_sanpham()%>/1/<%=ress.get_return()[i].getDongia()%>/<%=ress.get_return()[i].getGiamgia()%>" class="btn btn-default add-to-cart"><i
 								class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 						</div>
 						<div class="product-overlay">
 							<div class="overlay-content">
 								<h2><%=nf.format(Math.round(ress.get_return()[i].getDongia())) %> VNĐ</h2>
 								<p><%=ress.get_return()[i].getTensanpham() %></p>
-								<a href="cart.html" class="btn btn-default add-to-cart"><i
+								<a href="/luanvan_shop/index.html/<%=ress.get_return()[i].getId_sanpham()%>/1/<%=ress.get_return()[i].getDongia()%>/<%=ress.get_return()[i].getGiamgia()%>" class="btn btn-default add-to-cart"><i
 									class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 							</div>
 						</div>

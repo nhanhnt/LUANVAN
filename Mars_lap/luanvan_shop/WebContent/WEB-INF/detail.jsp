@@ -64,9 +64,20 @@
 							<p>Mã sản phẩm: ${idsp}</p>
 							<span> <span>${gia} VNĐ</span>
 								<p>
+									<!-- 
 									<button type="button" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
 									</button>
+									<a href="#" class="btn btn-default add-to-cart"><i
+									class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+									 -->
+									
+									<form action="/luanvan_shop/detail.html/${idsp}" method="post" >
+										<input type="hidden" value="themhang" name="action" />
+										<button type="submit" class="btn btn-fefault cart"> 
+											<i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng								
+										</button>
+									</form>
 								</p>
 							</span>
 							<p>

@@ -5,14 +5,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<spring:url value="css/bootstrap.min.css" var="bootstrap" />
-<spring:url value="css/font-awesome.min.css" var="fonte" />
-<spring:url value="css/prettyPhoto.css" var="prettyPhoto" />
-<spring:url value="css/price-range.css" var="pricee" />
-<spring:url value="css/animate.css" var="animate" />
-<spring:url value="css/main.css" var="main" />
-<spring:url value="css/responsive.css" var="responsive" />
-<spring:url value="images" var="images" />
+<spring:url value="/css/bootstrap.min.css" var="bootstrap" />
+<spring:url value="/css/font-awesome.min.css" var="fonte" />
+<spring:url value="/css/prettyPhoto.css" var="prettyPhoto" />
+<spring:url value="/css/price-range.css" var="pricee" />
+<spring:url value="/css/animate.css" var="animate" />
+<spring:url value="/css/main.css" var="main" />
+<spring:url value="/css/responsive.css" var="responsive" />
+<spring:url value="/images" var="images" />
 
 <link href="${bootstrap}" rel="stylesheet" />
 <link href="${fonte}" rel="stylesheet" />
@@ -21,12 +21,12 @@
 <link href="${animate}" rel="stylesheet" />
 <link href="${main}" rel="stylesheet" />
 <link href="${responsive}" rel="stylesheet" />
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.scrollUp.min.js"></script>
-<script src="js/price-range.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/main.js"></script>
+<script src="/luanvan_shop/js/jquery.js"></script>
+<script src="/luanvan_shop/js/bootstrap.min.js"></script>
+<script src="/luanvan_shop/js/jquery.scrollUp.min.js"></script>
+<script src="/luanvan_shop/js/price-range.js"></script>
+<script src="/luanvan_shop/js/jquery.prettyPhoto.js"></script>
+<script src="/luanvan_shop/js/main.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Thời trang - LVShopper</title>
 
@@ -50,6 +50,7 @@
  -->
 </head>
 <body>
+	
 	<!-- 
 	<h1>${msg}</h1>
 	<h1>${msgservices}</h1>

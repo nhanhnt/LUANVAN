@@ -1,3 +1,10 @@
+
+<a href="/luanvan_shop/index.html/<%=ress.get_return()[i].getId_sanpham()%>/1/<%=ress.get_return()[i].getDongia()%>/<%=ress.get_return()[i].getGiamgia()%>" class="btn btn-default add-to-cart"><i
+
+
+----------------------------------------------------------------------
+
+
 <%@page import="org.apache.jasper.tagplugins.jstl.core.Catch"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

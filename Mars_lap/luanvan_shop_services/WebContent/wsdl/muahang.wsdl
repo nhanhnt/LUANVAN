@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.shop.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.shop.com" xmlns:intf="http://services.shop.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.shop.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getlistmh_sum">
+    <complexType>
+     <sequence>
+      <element name="id_hoadon" type="xsd:int"/>
+      <element name="count" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getlistmh_sumResponse">
+    <complexType>
+     <sequence>
+      <element name="getlistmh_sumReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getlistmh">
+    <complexType>
+     <sequence>
+      <element name="id_hoadon" type="xsd:int"/>
+      <element name="count" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getlistmhResponse">
+    <complexType>
+     <sequence>
+      <element name="getlistmhReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getlistmhResponse">
+
+      <wsdl:part element="impl:getlistmhResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getlistmh_sumResponse">
+
+      <wsdl:part element="impl:getlistmh_sumResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getlistmh_sumRequest">
+
+      <wsdl:part element="impl:getlistmh_sum" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getlistmhRequest">
+
+      <wsdl:part element="impl:getlistmh" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="muahang">
+
+      <wsdl:operation name="getlistmh_sum">
+
+         <wsdl:input message="impl:getlistmh_sumRequest" name="getlistmh_sumRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getlistmh_sumResponse" name="getlistmh_sumResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getlistmh">
+
+         <wsdl:input message="impl:getlistmhRequest" name="getlistmhRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getlistmhResponse" name="getlistmhResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="muahangSoapBinding" type="impl:muahang">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getlistmh_sum">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getlistmh_sumRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getlistmh_sumResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getlistmh">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getlistmhRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getlistmhResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="muahangService">
+
+      <wsdl:port binding="impl:muahangSoapBinding" name="muahang">
+
+         <wsdlsoap:address location="http://localhost:8080/luanvan_shop_services/services/muahang"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

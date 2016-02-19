@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from muahangService WSDL service -->
+
+  <service name="muahang" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.shop.com"/>
+      <parameter name="wsdlServiceElement" value="muahangService"/>
+      <parameter name="schemaQualified" value="http://services.shop.com"/>
+      <parameter name="wsdlServicePort" value="muahang"/>
+      <parameter name="className" value="com.shop.services.muahang"/>
+      <parameter name="wsdlPortType" value="muahang"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://services.shop.com" xmlns:retNS="http://services.shop.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getlistmh_sum" qname="operNS:getlistmh_sum" returnQName="retNS:getlistmh_sumReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://services.shop.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id_hoadon" type="tns:int"/>
+        <parameter xmlns:pns="http://services.shop.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:count" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://services.shop.com" xmlns:retNS="http://services.shop.com" xmlns:rtns="http://services.shop.com" xmlns:tns="http://services.shop.com" name="getlistmh" qname="operNS:getlistmh" returnQName="retNS:getlistmhReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:pns="http://services.shop.com" qname="pns:id_hoadon" type="tns:int"/>
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:pns="http://services.shop.com" qname="pns:count" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="getlistmh getlistmh_sum"/>
+
+      <typeMapping xmlns:ns="http://services.shop.com" qname="ns:&gt;getlistmh_sumResponse" type="java:com.shop.services.Getlistmh_sumResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.shop.com" qname="ns:&gt;getlistmh" type="java:com.shop.services.Getlistmh" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.shop.com" qname="ns:&gt;getlistmhResponse" type="java:com.shop.services.GetlistmhResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://services.shop.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.shop.com" qname="ns:&gt;getlistmh_sum" type="java:com.shop.services.Getlistmh_sum" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
