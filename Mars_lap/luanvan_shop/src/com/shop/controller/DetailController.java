@@ -37,6 +37,7 @@ public class DetailController {
 		String login_display = request.getParameter("login_display");
 		String account_display = request.getParameter("account_display");
 		String cart_display = request.getParameter("cart_display");
+		String hoadon_display = request.getParameter("hoadon_display");
 		String username = (String) httpsession.getAttribute("username");
 		String id_user = (String) httpsession.getAttribute("id_user");
 		String action = request.getParameter("action");
@@ -50,6 +51,7 @@ public class DetailController {
 			logout_display = "none";
 			cart_display = "return false;";
 			account_display = "return false;";
+			hoadon_display="return false;";
 			if (action.equals("themhang")) {
 				response.sendRedirect("/luanvan_shop/account.html");
 			}

@@ -81,7 +81,7 @@
 											<!--  
 											<a class="cart_quantity_up" href=""> + </a> 
 											-->
-											<form style="float: left" class="cart_quantity_up" action="/luanvan_shop/cart.html/soluong/${cong}" method="post" >
+											<form style="float: left" class="cart_quantity_up" action="/luanvan_shop/cart.html/cong/${lst.getId_chitiethoadon()}" method="post" >
 												<input type="hidden" value="cong" name="action" />
 												<button type="submit" class="cart_quantity_up"> 
 													 +								
@@ -92,7 +92,7 @@
 												class="cart_quantity_input" type="text" name="quantity"
 												value="${lst.getSoluong()}" autocomplete="off" size="2">
 											
-											<form style="float: left" class="cart_quantity_up" action="/luanvan_shop/cart.html/soluong/${tru}" method="post" >
+											<form style="float: left" class="cart_quantity_up" action="/luanvan_shop/cart.html/tru/${lst.getId_chitiethoadon()}" method="post" >
 												<input type="hidden" value="tru" name="action" />
 												<button type="submit" class="cart_quantity_up"> 
 													 -								
@@ -135,7 +135,7 @@
 				<div class="heading">
 					<h3>Tính toán tổng tiền và phụ phí</h3>
 					<p>Vui lòng nhập đầy đủ các thông tin bên dưới, sau đó nhấn
-						thành tiền</p>
+						thành tiền ${dcgh}</p>
 				</div>
 				<div class="row">
 					<div class="col-sm-6">
@@ -187,13 +187,13 @@
 					<div class="col-sm-6" style="display: ${tong_display};">
 						<div class="total_area">
 							<ul>
-								<form action="/luanvan_shop/cart.html" method="post">
+								<form action="/luanvan_shop/cart.html/${id_hoadon}/${diachigiaohang}/${city}/${phuongthucthanhtoan}/${ngaynhan}/${phiship}" method="post">
 									<input type="hidden" value="thanhtoan" name="action" />
 
 									<li>${diachigiaohang}<span>${city}</span></li>
 									<li>${phuongthucthanhtoan}<span></span></li>
 									<li>Ngày nhận hàng <span>${ngaynhan}</span></li>
-									<li>Phí ship <span>${phiship} VNĐ</span></li>
+									<li>Phí ship <span>${pship} VNĐ</span></li>
 									<li>Tổng thành tiền <span>${tongtien} VNĐ</span></li>
 
 

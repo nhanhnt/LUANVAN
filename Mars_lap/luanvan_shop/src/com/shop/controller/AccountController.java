@@ -40,6 +40,7 @@ public class AccountController {
 		String action = request.getParameter("action");
 		String account_display = request.getParameter("account_display");
 		String cart_display = request.getParameter("cart_display");
+		String hoadon_display = request.getParameter("hoadon_display");
 		String error = "", errordn = "";
 		HttpSession httpsession = request.getSession();
 		httpsession.setAttribute("username", "Account");
@@ -65,9 +66,11 @@ public class AccountController {
 			logout_display = "none";
 			cart_display = "return false;";
 			account_display = "return false;";
+			hoadon_display="return false;";
 		} else {
 			logout_display = "block";
 			cart_display = "return false;";
+			hoadon_display="return false;";
 			account_display = "return false;";
 		}
 		try {
@@ -141,6 +144,7 @@ public class AccountController {
 			mv.addObject("account_display", account_display);
 			mv.addObject("cart_display", cart_display);
 			mv.addObject("id_hoadon", id_hoadon);
+			mv.addObject("hoadon_display", hoadon_display);
 		}
 		return mv;
 	}

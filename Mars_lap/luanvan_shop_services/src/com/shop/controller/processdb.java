@@ -4,13 +4,18 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.shop.dao.ConnectDatabase;
 import com.shop.model.City;
 import com.shop.model.DSMuahang;
 import com.shop.model.DanhMuc;
+import com.shop.model.HoaDon;
 import com.shop.model.SanPham;
 
 public class processdb {
@@ -399,6 +404,103 @@ public class processdb {
 
 		return result;
 	}
+	public static String processtangsl(String id_cthoadon) throws SQLException {
+		String result = "0";
+		Connection myConnection = null;
+		try {
+			myConnection = ConnectDatabase.getConnsql();
+			String sql = "{?=call func_tangsl(?)}";
+			CallableStatement myQuery = myConnection.prepareCall(sql);
+			myQuery.registerOutParameter(1, java.sql.Types.INTEGER);
+			myQuery.setString(2, id_cthoadon);
+						
+			myQuery.execute();
+			result = myQuery.getString(1);
+			myConnection.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			myConnection.close();
+		}
+
+		return result;
+	}
+	public static String processgiamsl(String id_cthoadon) throws SQLException {
+		String result = "0";
+		Connection myConnection = null;
+		try {
+			myConnection = ConnectDatabase.getConnsql();
+			String sql = "{?=call func_giamsl(?)}";
+			CallableStatement myQuery = myConnection.prepareCall(sql);
+			myQuery.registerOutParameter(1, java.sql.Types.INTEGER);
+			myQuery.setString(2, id_cthoadon);
+						
+			myQuery.execute();
+			result = myQuery.getString(1);
+			myConnection.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			myConnection.close();
+		}
+
+		return result;
+	}
+	
+	public static List<HoaDon> processgetdshoadon(int id_user,int pages,int count) throws SQLException {
+		List<HoaDon> list = new ArrayList<HoaDon>();
+		Connection myConnection = null;
+		try {
+			myConnection = ConnectDatabase.getConnsql();
+			String sql = "{call pro_allhoadon(?,?,?)}";
+			CallableStatement myQuery = myConnection.prepareCall(sql);
+			myQuery.setInt(1, id_user);
+			myQuery.setInt(2, pages);
+			myQuery.setInt(3, count);
+			ResultSet result = myQuery.executeQuery();
+			while (result.next()) {
+				HoaDon dshd = new HoaDon();
+				dshd.setDiachigiaohang(result.getString("diachigiaohang"));
+				dshd.setNgaygiaohang(result.getString("ngaygiaohang"));
+				dshd.setTpgiaohang(result.getString("tpgiaohang"));			
+				dshd.setPhuongthucthanhtoan(result.getString("phuongthucthanhtoan"));
+				dshd.setPhiship(result.getString("phiship"));
+				dshd.setStatus(result.getString("status"));
+				dshd.setTongtien(result.getString("tongtien"));
+				list.add(dshd);
+			}
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		} finally {
+			myConnection.close();
+		}
+
+		return list;
+
+	}
+	
+	public static int processgetdshoadon_count(int id_user,int pages,int count) throws SQLException {
+		int result=0;
+		Connection myConnection = null;
+		try {
+			myConnection = ConnectDatabase.getConnsql();
+			String sql = "{call pro_allhoadon(?,?,?)}";
+			CallableStatement myQuery = myConnection.prepareCall(sql);
+			myQuery.setInt(1, id_user);
+			myQuery.setInt(2, pages);
+			myQuery.registerOutParameter(3,java.sql.Types.INTEGER);
+			myQuery.execute();
+			result = myQuery.getInt(3);
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		} finally {
+			myConnection.close();
+		}
+
+		return result;
+
+	}
 	// public static String process2city(String thanhpho1, String thanhpho2)
 	// throws SQLException {
 	// String result = "0";
@@ -504,7 +606,23 @@ public class processdb {
 		
 		//System.out.println(processkc2city("TP Huế","TP Đà Nẵng"));
 		
-		System.out.println("Xóa mặt hàng " + processdeletehang(Integer.toString(14)));
+		//System.out.println("Xóa mặt hàng " + processdeletehang(Integer.toString(14)));
+		//System.out.println("Giảm " + processgiamsl(Integer.toString(8)));
+		
+		
+		List<HoaDon> list = processgetdshoadon(10, 1,1);
+		for (int i = 0; i < list.size(); i++) {
+			HoaDon ds = list.get(i);
+			System.out.println("-----------------------");
+			System.out.println(ds.getDiachigiaohang());
+			System.out.println(ds.getPhuongthucthanhtoan());
+			System.out.println(ds.getNgaygiaohang());
+			System.out.println(ds.getPhiship());
+			System.out.println(ds.getStatus());
+			System.out.println(ds.getTongtien());
+			System.out.println("-----------------------");
+		}
+		System.out.println("Status" + processgetdshoadon_count(10,1,1));
 	}
 
 }

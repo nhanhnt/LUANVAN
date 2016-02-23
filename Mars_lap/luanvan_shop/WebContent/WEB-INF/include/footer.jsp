@@ -168,7 +168,7 @@
 			<div class="row">
 				<p class="pull-left">Copyright 2016 LV-SHOPPER </p>
 				<p class="pull-right">
-					Designed by <span><a target="_blank"
+					programming by <span><a target="_blank"
 						href="http://localhost:8080/luanvan_shop/index.html">Nhanhnt</a></span>
 				</p>
 			</div>

@@ -37,30 +37,69 @@ public class HoaDon {
 		this.phuongthucthanhtoan = phuongthucthanhtoan;
 	}
 
-	public Timestamp getNgaymuahang() {
-		return ngaymuahang;
-	}
-
-	public void setNgaymuahang(Timestamp ngaymuahang) {
-		this.ngaymuahang = ngaymuahang;
-	}
-
-	public Timestamp getNgaygiaohang() {
-		return ngaygiaohang;
-	}
-
-	public void setNgaygiaohang(Timestamp ngaygiaohang) {
-		this.ngaygiaohang = ngaygiaohang;
-	}
+	
 
 	private TaiKhoan taikhoan;
 	private String diachigiaohang;
 	private String phuongthucthanhtoan;
-	private Timestamp ngaymuahang;
-	private Timestamp ngaygiaohang;
+	private String ngaymuahang;
+	private String ngaygiaohang;
+	private String phiship;
+	private String status;
+	private String tpgiaohang;
+	private String tongtien;
+
+	public String getPhiship() {
+		return phiship;
+	}
+
+	public void setPhiship(String phiship) {
+		this.phiship = phiship;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public HoaDon() {
+		super();
+	}
+
+
+
+	public String getNgaymuahang() {
+		return ngaymuahang;
+	}
+
+	public void setNgaymuahang(String ngaymuahang) {
+		this.ngaymuahang = ngaymuahang;
+	}
+
+	public String getNgaygiaohang() {
+		return ngaygiaohang;
+	}
+
+	public void setNgaygiaohang(String ngaygiaohang) {
+		this.ngaygiaohang = ngaygiaohang;
+	}
+
+	
+
+	public String getTongtien() {
+		return tongtien;
+	}
+
+	public void setTongtien(String tongtien) {
+		this.tongtien = tongtien;
+	}
 
 	public HoaDon(String id_hoadon, TaiKhoan taikhoan, String diachigiaohang, String phuongthucthanhtoan,
-			Timestamp ngaymuahang, Timestamp ngaygiaohang) {
+			String ngaymuahang, String ngaygiaohang, String phiship, String status, String tpgiaohang,
+			String tongtien) {
 		super();
 		this.id_hoadon = id_hoadon;
 		this.taikhoan = taikhoan;
@@ -68,10 +107,23 @@ public class HoaDon {
 		this.phuongthucthanhtoan = phuongthucthanhtoan;
 		this.ngaymuahang = ngaymuahang;
 		this.ngaygiaohang = ngaygiaohang;
+		this.phiship = phiship;
+		this.status = status;
+		this.tpgiaohang = tpgiaohang;
+		this.tongtien = tongtien;
 	}
 
-	public HoaDon() {
-		super();
+	public String getTpgiaohang() {
+		return tpgiaohang;
 	}
+
+	public void setTpgiaohang(String tpgiaohang) {
+		this.tpgiaohang = tpgiaohang;
+	}
+
+	
+	
+
+	
 
 }

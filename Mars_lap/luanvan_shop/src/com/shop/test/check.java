@@ -15,6 +15,11 @@ import com.shop.services.DmchaStub.Getdmcha;
 import com.shop.services.DmconStub;
 import com.shop.services.DmconStub.Getdmcon;
 import com.shop.services.DmconStub.GetdmconResponse;
+import com.shop.services.DshoadonStub;
+import com.shop.services.DshoadonStub.Dshoadon;
+import com.shop.services.DshoadonStub.DshoadonResponse;
+import com.shop.services.DshoadonStub.Dshoadon_countpage;
+import com.shop.services.DshoadonStub.Dshoadon_countpageResponse;
 import com.shop.services.HelloworldStub;
 import com.shop.services.MuahangStub;
 import com.shop.services.HelloworldStub.Helo;
@@ -29,15 +34,21 @@ import com.shop.services.SanphamStub;
 import com.shop.services.SanphamStub.Getsp;
 import com.shop.services.SanphamStub.GetspResponse;
 import com.shop.services.SanphamctStub;
+import com.shop.services.TangslStub;
 import com.shop.services.CityStub.Getcity;
 import com.shop.services.CityStub.GetcityResponse;
 import com.shop.services.DangkyStub.Registry;
 import com.shop.services.DangkyStub.RegistryResponse;
 import com.shop.services.SanphamctStub.Getspct;
 import com.shop.services.SanphamctStub.GetspctResponse;
+import com.shop.services.TangslStub.Tangsl;
+import com.shop.services.TangslStub.TangslResponse;
 import com.shop.services.UpdatehoadonStub;
+import com.shop.services.XoahangStub;
 import com.shop.services.UpdatehoadonStub.Capnhathoadon;
 import com.shop.services.UpdatehoadonStub.CapnhathoadonResponse;
+import com.shop.services.XoahangStub.Xoahang;
+import com.shop.services.XoahangStub.XoahangResponse;
 
 public class check {
 
@@ -139,7 +150,7 @@ public class check {
 			
 //			UpdatehoadonStub upstub=new UpdatehoadonStub();
 //			Capnhathoadon capnhat=new Capnhathoadon();
-//			capnhat.setId_hoadon(Integer.toString(14));
+//			capnhat.setId_hoadon(Integer.toString(21));
 //			capnhat.setDiachi("93 nguyeen trai");
 //			capnhat.setTp("TP Đà nẵng");
 //			capnhat.setPhuongthuc("Trả tiền khi nhận hàng");
@@ -148,20 +159,47 @@ public class check {
 //			CapnhathoadonResponse res=upstub.capnhathoadon(capnhat);
 //			System.out.println(res.get_return());
 			
-			String phiship="";
-			Km2CityStub kmstub=new Km2CityStub();
-			Km2City km2=new Km2City();
-			km2.setTp1("TP Huế");
-			km2.setTp2("Thanh Hóa");
-			Km2CityResponse kmres=kmstub.km2City(km2);
-			phiship=kmres.get_return().toString();
-			System.out.println(phiship);
+//			String phiship="";
+//			Km2CityStub kmstub=new Km2CityStub();
+//			Km2City km2=new Km2City();
+//			km2.setTp1("TP Huế");
+//			km2.setTp2("Thanh Hóa");
+//			Km2CityResponse kmres=kmstub.km2City(km2);
+//			phiship=kmres.get_return().toString();
+//			System.out.println(phiship);
+//			
+//			DateFormat dateformat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+//			Date date=new Date();
+//			date=DateUtil.addDay(date,3);
+//			System.out.println(dateformat.format(date));
 			
-			DateFormat dateformat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-			Date date=new Date();
-			date=DateUtil.addDay(date,3);
-			System.out.println(dateformat.format(date));
+//			TangslStub tangstub = new TangslStub();
+//			Tangsl tang = new Tangsl();
+//			tang.setId_cthoadon(Integer.toString(7));
+//			TangslResponse res = tangstub.tangsl(tang);
+//			System.out.println(res.get_return().toString());
 			
+			DshoadonStub dshd=new DshoadonStub();
+			Dshoadon hd=new Dshoadon();
+			hd.setId_user(10);
+			hd.setCount(1);
+			hd.setPages(1);
+			DshoadonResponse res=dshd.dshoadon(hd);
+			for (int i = 0; i < res.get_return().length; i++) {
+				System.out.println(res.get_return()[i].getDiachigiaohang());
+				System.out.println(res.get_return()[i].getPhuongthucthanhtoan());
+				System.out.println(res.get_return()[i].getPhiship());
+				System.out.println(res.get_return()[i].getStatus());
+				System.out.println(res.get_return()[i].getNgaygiaohang());
+				System.out.println(res.get_return()[i].getTpgiaohang());
+				System.out.println(res.get_return()[i].getTongtien());
+			}
+			Dshoadon_countpage ds_cou=new Dshoadon_countpage();
+			ds_cou.setCount(1);
+			ds_cou.setId_user(10);
+			ds_cou.setPages(1);
+			Dshoadon_countpageResponse re_count	=dshd.dshoadon_countpage(ds_cou);
+			System.out.println("Tong trang "+re_count.get_return());
 		} catch (AxisFault e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

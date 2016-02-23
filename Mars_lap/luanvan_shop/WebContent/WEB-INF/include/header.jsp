@@ -15,10 +15,10 @@
 				<div class="col-sm-6">
 					<div class="contactinfo">
 						<ul class="nav nav-pills">
-							<li><a href="#"><i class="fa fa-phone"></i> 054.3999999
+							<li><a href="#"><i class="fa fa-phone"></i> 054.3xxxxxx
 							</a></li>
 							<li><a href="#"><i class="fa fa-envelope"></i>
-									lv_shopper@gmail.com </a></li>
+									 lvshopper2016@gmail.com </a></li>
 						</ul>
 					</div>
 				</div>
@@ -49,11 +49,13 @@
 									Checkout</a></li>
 							 -->
 							<li><a href="/luanvan_shop/cart.html" onclick="${cart_display}"><i class="fa fa-shopping-cart"></i>
-									Cart</a></li>
+									Giỏ hàng</a></li>
+							<li><a href="/luanvan_shop/hoadon.html" onclick="${hoadon_display}"><i class="fa fa-shopping-cart"></i>
+									Hóa đơn</a></li>
 							<li style="display: ${login_display};"><a href="/luanvan_shop/account.html"><i
-									class="fa fa-lock"></i> Login</a></li>
+									class="fa fa-lock"></i> Đăng nhập</a></li>
 							<li style="display: ${logout_display};"><a href="/luanvan_shop/account.html/logout"><i
-									class="fa fa-lock"></i> Logout</a></li>
+									class="fa fa-lock"></i> Thoát</a></li>
 						</ul>
 					</div>
 				</div>
