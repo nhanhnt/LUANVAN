@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.sopa.sbus.service" name="Service" schema="schema/org.sopa.sbus.service.exsd"/>
+   <extension
+         point="org.sopa.sbus.service">
+      <service
+            class="org.example.Arithmatics"
+            name="org.example.arithmatics">
+         <operation
+               name="multiply"
+               returnType="xsd:double">
+            <parameter
+                  name="first"
+                  type="xsd:double">
+            </parameter>
+            <parameter
+                  name="second"
+                  type="xsd:double">
+            </parameter>
+         </operation>
+      </service>
+   </extension>
+
+</plugin>
