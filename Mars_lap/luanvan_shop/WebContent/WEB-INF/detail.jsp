@@ -71,13 +71,12 @@
 									<a href="#" class="btn btn-default add-to-cart"><i
 									class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 									 -->
-									
-									<form action="/luanvan_shop/detail.html/${idsp}" method="post" >
-										<input type="hidden" value="themhang" name="action" />
-										<button type="submit" class="btn btn-fefault cart"> 
-											<i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng								
-										</button>
-									</form>
+								<form action="/luanvan_shop/detail.html/${idsp}" method="post">
+									<input type="hidden" value="themhang" name="action" />
+									<button type="submit" class="btn btn-fefault cart">
+										<i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
+									</button>
+								</form>
 								</p>
 							</span>
 							<p>
@@ -98,7 +97,7 @@
 					<!--category-tab-->
 					<div class="col-sm-12">
 						<ul class="nav nav-tabs">
-							<li><a href="#details" data-toggle="tab">Chi tiết</a></li>
+							<li><a href="#details" data-toggle="tab">Chi tiết ${tenkhachhang} ${emailkhachhang} ${noidungphanhoi}</a></li>
 							<li class="active"><a href="#reviews" data-toggle="tab">Phản
 									hồi</a></li>
 						</ul>
@@ -126,14 +125,18 @@
 									<b>Gửi thông tin phản hồi</b>
 								</p>
 
-								<form action="#">
-									<span> <input type="text" placeholder="Tên khách hàng" />
-										<input type="email" placeholder="Địa chỉ Email" />
+								<form action="/luanvan_shop/detail.html/${idsp}" method="post">
+									<input type="hidden" value="guimail" name="action" /> 
+									<span>
+										<input type="text" placeholder="Tên khách hàng"
+										name="tenkhachhang" /> <input type="email"
+										placeholder="Địa chỉ Email" name="emailkhachhang" />
 									</span>
-									<textarea name=""></textarea>
+									<textarea name="noidungphanhoi"></textarea>
 									<b>Rating: </b> <img src="../images/product-details/rating.png"
 										alt="" />
-									<button type="button" class="btn btn-default pull-right">
+										<p style="color: red">${error}</p>
+									<button type="submit" class="btn btn-default pull-right">
 										Submit</button>
 								</form>
 							</div>

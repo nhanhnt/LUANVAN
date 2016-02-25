@@ -53,7 +53,7 @@
 							<li><a href="/luanvan_shop/hoadon.html" onclick="${hoadon_display}"><i class="fa fa-shopping-cart"></i>
 									Hóa đơn</a></li>
 							<li style="display: ${login_display};"><a href="/luanvan_shop/account.html"><i
-									class="fa fa-lock"></i> Đăng nhập</a></li>
+									class="fa fa-lock"></i> Đăng nhập/Đăng ký</a></li>
 							<li style="display: ${logout_display};"><a href="/luanvan_shop/account.html/logout"><i
 									class="fa fa-lock"></i> Thoát</a></li>
 						</ul>

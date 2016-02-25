@@ -38,9 +38,14 @@
 					<form action="/luanvan_shop/account.html" method="post">
 					<input type="hidden" value="login" name="action" />
 						<input type="text" placeholder="Tài khoản" name="tkdangnhap" /> <input
-							type="password" placeholder="Mật khẩu" name="mkdangnhap"/> <span> <input
+							type="password" placeholder="Mật khẩu" name="mkdangnhap"/> 
+							<!--
+							<span> 
+							  <input
 							type="checkbox" class="checkbox"> Duy trì đăng nhập
-						</span>
+							
+							</span>
+							-->
 						<p style="color: red">${errordn}</p>
 						<button type="submit" class="btn btn-default">Đăng nhập</button>
 					</form>
