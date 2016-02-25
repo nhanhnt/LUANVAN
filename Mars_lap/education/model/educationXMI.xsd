@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:education="http://www.example.org/education" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/education">
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:complexType name="Person">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="firstname" type="xsd:string"/>
+    <xsd:attribute name="lastname" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Person" type="education:Person"/>
+  <xsd:complexType name="Student">
+    <xsd:complexContent>
+      <xsd:extension base="education:Person"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Student" type="education:Student"/>
+  <xsd:complexType name="Teacher">
+    <xsd:complexContent>
+      <xsd:extension base="education:Person"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Teacher" type="education:Teacher"/>
+  <xsd:complexType name="Course">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="student" type="education:Student"/>
+      <xsd:element name="teacher" type="education:Teacher"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Course" type="education:Course"/>
+</xsd:schema>

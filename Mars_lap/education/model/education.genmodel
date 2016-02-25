@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/education/src" modelPluginID="education" modelName="Education"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>education.ecore</foreignModel>
+  <genPackages prefix="Education" disposableProviderFactory="true" ecorePackage="education.ecore#/">
+    <genDataTypes ecoreDataType="education.ecore#//date"/>
+    <genClasses ecoreClass="education.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute education.ecore#//Person/firstname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute education.ecore#//Person/lastname"/>
+    </genClasses>
+    <genClasses ecoreClass="education.ecore#//Student"/>
+    <genClasses ecoreClass="education.ecore#//Teacher"/>
+    <genClasses ecoreClass="education.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute education.ecore#//Course/name"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference education.ecore#//Course/student"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference education.ecore#//Course/teacher"/>
+      <genOperations ecoreOperation="education.ecore#//Course/start">
+        <genParameters ecoreParameter="education.ecore#//Course/start/startdate"/>
+      </genOperations>
+      <genOperations ecoreOperation="education.ecore#//Course/finish">
+        <genParameters ecoreParameter="education.ecore#//Course/finish/finishdate"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

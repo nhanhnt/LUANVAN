@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+   <extension-point id="id_point1" name="org.sopa.sbus" schema="schema/id_point1.exsd"/>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated education -->
+      <package
+            uri="http://www.example.org/education"
+            class="education.EducationPackage"
+            genModel="model/education.genmodel"/>
+   </extension>
+   
+
+   
+
+</plugin>
