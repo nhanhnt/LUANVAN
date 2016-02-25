@@ -1,6 +1,0 @@
-# Ket noi database
-url==jdbc:mysql://localhost:3306/shoponline?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
-username_database==ca2PzRax9YM=
-password_database==ca2PzRax9YM=
-
-
