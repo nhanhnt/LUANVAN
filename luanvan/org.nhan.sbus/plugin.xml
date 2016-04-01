@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="services" name="services" schema="schema/services.exsd"/>
+   <extension-point id="webservices" name="Web Services" schema="schema/webservices.exsd"/>
+   <extension-point id="servlets" name="Java Servlets" schema="schema/servlets.exsd"/>
+   <extension
+         point="org.nhan.services.services">
+      <service
+            class="org.example.Arithmatics"
+            name="org.example.arithmatics"
+            >
+         <operation
+               name="multiply"
+               returns="double">
+            <parameter
+                  name="first"
+                  type="xsd:double"/>
+            <parameter
+                  name="second"
+                  type="xsd:double"/>
+         </operation>
+      </service>
+   </extension>
+
+</plugin>

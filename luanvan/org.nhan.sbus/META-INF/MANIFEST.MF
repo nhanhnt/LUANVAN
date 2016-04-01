@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Services Plug-in
+Bundle-SymbolicName: org.nhan.services; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: org.nhan.services.MessageHandler
+Bundle-Localization: plugin
+Require-Bundle: org.example,
+ org.eclipse.core.runtime
+Eclipse-AutoStart: true
+Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
+Export-Package: org.nhan.services
+Bundle-ClassPath: library.jar
+

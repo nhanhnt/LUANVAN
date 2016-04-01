@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipelines>
+	<pipeline name="complex1">
+		<parameters>
+			<parameter name="input" type="int"/>
+		</parameters>
+		<call id="parent" service="at.slife.test" operation="multiply">
+	    	<parameter type="int">2</parameter>
+	        <parameter type="int">
+	        	<call service="at.slife.test" operation="add">
+	        		<parameter type="int">
+			        	<call service="at.slife.pipeline" operation="square">
+			        		<parameter type="int">{input}</parameter>
+			        	</call>
+	        		</parameter>
+			        <parameter type="int">
+			        	<call service="at.slife.test" operation="multiply">
+			        		<parameter type="int">15</parameter>
+			        		<parameter type="int">{input}</parameter>
+			        	</call>
+			        </parameter>
+	        	</call>
+	        </parameter>
+		</call>
+		<transform xsl="test1.xsl"/>
+		<transform xsl="test2.xsl"/>
+		<serialize type="xswt"/>
+	</pipeline>
+	<pipeline name="complex2">
+		<parameters/>
+		<call id="parent" service="at.slife.test" operation="multiply">
+	    	<parameter type="int">21</parameter>
+	        <parameter type="int">
+	        	<call service="at.slife.pipeline" operation="square">
+	        		<parameter type="int">10</parameter>
+	        	</call>
+	        </parameter>
+		</call>
+		<transform xsl="test1.xsl"/>
+		<transform xsl="test2.xsl"/>
+		<serialize type="xswt"/>
+	</pipeline>
+	<pipeline name="square">
+		<parameters>
+			<parameter name="input" type="int"/>
+		</parameters>
+		<call service="at.slife.test" operation="multiply" returns="int">
+			<parameter type="int">{input}</parameter>
+			<parameter type="int">10</parameter>
+		</call>
+		<serialize type="xml"/>
+	</pipeline>
+	
+</pipelines>

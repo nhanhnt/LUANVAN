@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.nhan.services.services">
+      <service
+            class="org.nhan.pipeline.Pipeline"
+            name="org.nhan.pipeline">
+         <operation
+               name="invokePipe"
+               returns="string">
+            <parameter
+                  name="pipeName"
+                  type="string"/>
+            <parameter
+                  name="xmlParams"
+                  type="string"/>
+         </operation>
+      </service>
+   </extension>
+
+</plugin>
