@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:java="http://xml.apache.org/axis/wsdd/providers/java"
+            xmlns:sbus="http://www.org.nhan/sbus">
+            <service name="MessageHandler" provider="java:RPC">
+                     <parameter name="className" value="org.nhan.sbus.MessageHandlerWS"/>
+                     <parameter name="scope" value="application"/>
+                     <operation name="invoke"
+                                qname="sbus:invoke"
+                                returnType="xsd:string"
+                                returnQName="sbus:results">
+                          <parameter qname="sbus:service" type="xsd:string" />
+                          <parameter qname="sbus:operation" type="xsd:string" />
+                          <parameter qname="sbus:param" type="xsd:string" />
+                          <documentation>Invoke services</documentation>
+                     </operation>
+
+            </service>
+
+</deployment>

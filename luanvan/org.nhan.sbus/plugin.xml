@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="services" name="services" schema="schema/services.exsd"/>
+   <extension-point id="webservices" name="Web Services" schema="schema/webservices.exsd"/>
+   <extension-point id="servlets" name="Java Servlets" schema="schema/servlets.exsd"/>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup class="org.nhan.sbus.MessageHandlerStartup"/>
+   </extension>
+   <extension
+         point="org.nhan.sbus.servlets">
+      <servlet
+            class="org.nhan.sbus.PipelineServlet"
+            name="PipelineServlet">
+         <mapping pathSpec="/servlet/PipelineServlet"/>
+         <mapping pathSpec="/pipelines/*"/>
+      </servlet>
+   </extension>
+   <extension
+         point="org.nhan.sbus.webservices">
+      <webservice
+            name="Feed Service"
+            wsdd="schema/feeds.wsdd"/>
+   </extension>
+
+</plugin>

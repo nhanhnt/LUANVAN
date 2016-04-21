@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Sbus Plug-in
+Bundle-SymbolicName: org.nhan.sbus; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: org.nhan.sbus.MessageHandler
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui
+Eclipse-AutoStart: true
+Export-Package: javax.servlet,
+ javax.servlet.http,
+ org.apache.axis.client,
+ org.nhan.sbus
+Bundle-ClassPath: .,
+ lib/dom4j-1.6.1.jar,
+ lib/eclipse-equinox-common-3.5.0.jar,
+ lib/asix/axis.jar,
+ lib/asix/commons-discovery.jar,
+ lib/asix/commons-logging.jar,
+ lib/asix/jaxrpc.jar,
+ lib/asix/log4j-1.2.8.jar,
+ lib/asix/saaj.jar,
+ lib/asix/wsdl4j.jar,
+ lib/asix/xercesImpl.jar,
+ lib/asix/xmlParserAPIs-2.5.jar,
+ lib/jetty/jetty-util-6.1.1.jar,
+ lib/jetty/servlet-api-2.5-6.1.1.jar,
+ src/,
+ lib/jetty/jetty-6.1.1.jar

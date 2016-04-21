@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry path="org.eclipse.pde.core.requiredPlugins" kind="con"/>
+	<classpathentry path="lib/dom4j-1.6.1.jar" kind="lib"/>
+	<classpathentry path="lib/jaxrpc.jar" kind="lib"/>
+	<classpathentry path="lib/asix/axis.jar" kind="lib"/>
+	<classpathentry path="lib/asix/commons-discovery.jar" kind="lib"/>
+	<classpathentry path="lib/asix/commons-logging.jar" kind="lib"/>
+	<classpathentry path="lib/asix/jaxrpc.jar" kind="lib"/>
+	<classpathentry path="lib/asix/log4j-1.2.8.jar" kind="lib"/>
+	<classpathentry path="lib/asix/saaj.jar" kind="lib"/>
+	<classpathentry path="lib/asix/wsdl4j.jar" kind="lib"/>
+	<classpathentry path="lib/asix/xercesImpl.jar" kind="lib"/>
+	<classpathentry path="lib/asix/xmlParserAPIs-2.5.jar" kind="lib"/>
+	<classpathentry path="lib/jetty/jetty-6.1.1.jar" kind="lib"/>
+	<classpathentry path="lib/jetty/jetty-util-6.1.1.jar" kind="lib"/>
+	<classpathentry path="lib/jetty/servlet-api-2.5-6.1.1.jar" kind="lib"/>
+	<classpathentry path="lib/jetty/start.jar" kind="lib"/>
+	<classpathentry path="lib/org.eclipse.equinox.common_3.2.0.v20060603.jar" kind="lib"/>
+	<classpathentry path="classes" kind="output"/>
+</classpath>
