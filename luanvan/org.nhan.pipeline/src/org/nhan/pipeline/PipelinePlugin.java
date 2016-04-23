@@ -61,6 +61,7 @@ public class PipelinePlugin extends AbstractUIPlugin {
 	        Path path = new Path(res);
 	        URL url = Platform.find(plugin.getBundle(), path);
 	        url = Platform.resolve(url);
+	        System.out.println("Plugin is : "+ plugin);
 	        return new File(url.getFile());
 	    }
 }

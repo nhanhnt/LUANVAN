@@ -2,28 +2,48 @@
 <pipelines>
 	<pipeline name="square">
 		<parameters>
-			<parameter name="input" type="int"/>
+			<parameter name="input" type="double"/>
 		</parameters>
-		<call service="org.example.arithmatics" operation="multiply" returns="int">
-	    	<parameter type="int">{input}</parameter>
-	    	<parameter type="int">{input}</parameter>
+		<call service="org.example.arithmatics" operation="multiply" returns="double">
+	    	<parameter type="double">{input}</parameter>
+	    	<parameter type="double">{input}</parameter>
 		</call>		
-		<transform xsl="test1.xsl"/>
+		<transform xsl="test.xsl"/>
+		<serialize type="xml"/>
 	</pipeline>	
+	
 	<pipeline name="combined" serialization="xml">
 		<parameters>
-			<parameter name="first" type="int"/>
-			<parameter name="second" type="intt"/>
+			<parameter name="first" type="double"/>
+			<parameter name="second" type="double"/>
 		</parameters>
-		<call service="org.example.arithmatics" operation="add" returns="int">
-	    	<parameter type="int">{first}</parameter>
-	    	<parameter type="int">{second}</parameter>
+		<call service="org.example.arithmatics" operation="add" returns="double">
+	    	<parameter type="double">{first}</parameter>
+	    	<parameter type="double">{second}</parameter>
 		</call>
-		<call service="org.example.arithmatics" operation="multiply" returns="int">
-	    	<parameter type="int">{first}</parameter>
-	    	<parameter type="int">{second}</parameter>
+		<call service="org.example.arithmatics" operation="multiply" returns="double">
+	    	<parameter type="double">{first}</parameter>
+	    	<parameter type="double">{second}</parameter>
 		</call>			
-		<transform method="xml" stylesheet="result.xsl"/>
+		<transform xsl="test2.xsl"/>
+		<serialize type="xml"/>
+	</pipeline>
+	
+	<pipeline name="nested" serialization="xml">
+		<parameters>
+			<parameter name="input" type="double"/>			
+		</parameters>
+		<call service="org.example.arithmatics" id="parent" operation="multiply" returns="double">
+	    	<parameter type="double">2.0</parameter>
+	    	<parameter>
+	    		<call service="org.example.arithmatics" operation="add" returns="double">
+	    			<parameter type="double">{input}</parameter>
+	    			<parameter type="double">15.0</parameter>
+				</call>	    		
+	    	</parameter>
+		</call>
+		<transform xsl="test3.xsl"/>
+		<serialize type="xml"/>
 	</pipeline>
 </pipelines>
 

@@ -30,23 +30,23 @@
             name="org.example.arithmatics">
          <operation
                name="multiply"
-               returns="int">
+               returns="double">
             <parameter
                   name="first"
-                  type="int"/>
+                  type="double"/>
             <parameter
                   name="second"
-                  type="int"/>
+                  type="double"/>
          </operation>
          <operation
                name="add"
-               returns="int">
+               returns="double">
             <parameter
                   name="first"
-                  type="int"/>
+                  type="double"/>
             <parameter
                   name="second"
-                  type="int"/>
+                  type="double"/>
          </operation>
       </service>
    </extension>

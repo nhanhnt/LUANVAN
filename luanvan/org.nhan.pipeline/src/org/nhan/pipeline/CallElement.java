@@ -164,15 +164,9 @@ public class CallElement {
 		return paramValue;
 	}
 
-	/**
-	 * invokes a pipeline and return the call results. If a sub-pipeline exists
-	 * in the call then the invoke method will go recursively till all the calls
-	 * are finished.
-	 * 
-	 * @return call results
-	 */
+	
 	public String invoke() {
-		System.out.println("invoking : " + serviceName + " operation : "
+		System.out.println("invoking : " + serviceName + " ;operation : "
 				+ operationName);
 		for (Object parameter : parameters) {
 			System.out.println("\tparameter : " + parameter.toString());
@@ -185,14 +179,13 @@ public class CallElement {
 			if (operationName.indexOf(':') < 0)
 				operationName = getParentPipe().getPipeSpace() + ":"
 						+ operationName;
-
 			Pipeline subPipe = new Pipeline(operationName);
 			subPipe.setParameterValues(parameters);
 			result = subPipe.processPipeline();
 		} else {
 			Call client = new Call(serviceName);
-			System.out.println("Services: " + serviceName + " --- "
-					+ operationName);
+//			System.out.println("Services: " + serviceName + " --- "
+//					+ operationName);
 			if (serviceName.equals("org.nhan.webservice")
 					&& operationName.equals("wsCall")) {
 				System.out.println("ooooooooooooo0: ");
