@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.nhan.sbus.services">
+      <service
+            class="org.nhan.webservice.Connect2WS"
+            name="org.nhan.webservice">
+         <operation
+               name="wssCall"
+               returns="string">
+            <parameter
+                  name="wsdlLoc"
+                  type="string"/>
+            <parameter
+                  name="org.nhan.webservice.parameter9"
+                  type="string"/>
+            <parameter
+                  name="portTypeName"
+                  type="string"/>
+            <parameter
+                  name="operName"
+                  type="string"/>
+            <parameter
+                  name="inputs"
+                  type="string"/>
+         </operation>
+         <operation
+               name="wsCall4mPipeline"
+               returns="string">
+            <parameter
+                  name="pipelineInfo"
+                  type="string"/>
+            <parameter
+                  name="inputs"
+                  type="string"/>
+         </operation>
+      </service>
+   </extension>
+
+</plugin>

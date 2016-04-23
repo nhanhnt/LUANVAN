@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry path="org.eclipse.pde.core.requiredPlugins" kind="con"/>
+	<classpathentry path="lib/activation.jar" kind="lib"/>
+	<classpathentry path="lib/admin-cli.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-admin.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-cmp.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-deployment-client.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-ext.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-jstl.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-jwsacc.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-launch.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-rt.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-tags.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-upgrade.jar" kind="lib"/>
+	<classpathentry path="lib/appserv-ws.jar" kind="lib"/>
+	<classpathentry path="lib/com-sun-commons-launcher.jar" kind="lib"/>
+	<classpathentry path="lib/com-sun-commons-logging.jar" kind="lib"/>
+	<classpathentry path="lib/dbschema.jar" kind="lib"/>
+	<classpathentry path="lib/j2ee.jar" kind="lib"/>
+	<classpathentry path="lib/j2ee-svc.jar" kind="lib"/>
+	<classpathentry path="lib/javaee.jar" kind="lib"/>
+	<classpathentry path="lib/jhall.jar" kind="lib"/>
+	<classpathentry path="lib/jmxremote_optional.jar" kind="lib"/>
+	<classpathentry path="lib/jsf-impl.jar" kind="lib"/>
+	<classpathentry path="lib/mail.jar" kind="lib"/>
+	<classpathentry path="lib/qname.jar" kind="lib"/>
+	<classpathentry path="lib/sun-appserv-ant.jar" kind="lib"/>
+	<classpathentry path="lib/toplink-essentials.jar" kind="lib"/>
+	<classpathentry path="lib/toplink-essentials-agent.jar" kind="lib"/>
+	<classpathentry path="lib/wsdl4j.jar" kind="lib"/>
+	<classpathentry path="bin" kind="output"/>
+</classpath>

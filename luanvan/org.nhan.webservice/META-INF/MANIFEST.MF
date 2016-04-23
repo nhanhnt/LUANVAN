@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Webservice Plug-in
+Bundle-SymbolicName: org.nhan.webservice; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: org.nhan.webservice.Activator
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.nhan.sbus
+Eclipse-AutoStart: true
