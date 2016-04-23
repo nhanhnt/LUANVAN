@@ -1,8 +1,9 @@
 package org.nhan.pipeline;
+
 import java.util.Iterator;
 import org.dom4j.Element;
 import org.dom4j.Node;
-import org.nhan.services.Call;
+import org.nhan.sbus.Call;
 
 public class CallElement {
 
@@ -179,10 +180,9 @@ public class CallElement {
 
 		Object result = null;
 
-		if (serviceName.equals("at.slife.pipeline")) {
+		if (serviceName.equals("org.nhan.pipeline")) {
 
-			if (operationName.indexOf(':') < 0) // is the pipe space is not
-												// specified (local pipe)
+			if (operationName.indexOf(':') < 0)
 				operationName = getParentPipe().getPipeSpace() + ":"
 						+ operationName;
 
@@ -191,9 +191,9 @@ public class CallElement {
 			result = subPipe.processPipeline();
 		} else {
 			Call client = new Call(serviceName);
-			System.out.println("0000000000000000-1: " + serviceName + " --- "
+			System.out.println("Services: " + serviceName + " --- "
 					+ operationName);
-			if (serviceName.equals("at.slife.webservice")
+			if (serviceName.equals("org.nhan.webservice")
 					&& operationName.equals("wsCall")) {
 				System.out.println("ooooooooooooo0: ");
 				Object[] wsparams = new Object[5];
@@ -221,6 +221,7 @@ public class CallElement {
 					e.printStackTrace();
 				}
 			}
+
 		}
 		System.out.println("Result is:" + result);
 

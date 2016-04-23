@@ -2,21 +2,42 @@
 <?eclipse version="3.0"?>
 <plugin>
    <extension
-         point="org.nhan.services.services">
+         point="org.nhan.sbus.services">
       <service
             class="org.nhan.pipeline.Pipeline"
             name="org.nhan.pipeline">
          <operation
                name="invokePipe"
-               returns="string">
+               returns="String">
             <parameter
                   name="pipeName"
-                  type="string"/>
+                  type="String"/>
             <parameter
                   name="xmlParams"
-                  type="string"/>
+                  type="String"/>
          </operation>
       </service>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="org.nhan.pipeline.actionSet"
+            label="Open Browser"
+            visible="true">
+         <menu
+               id="Pipeline"
+               label="Pipeline &amp;Menu">
+            <separator name="test"/>
+         </menu>
+         <action
+               class="org.nhan.pipeline.actions.PipelineAction"
+               icon="icons/pipe.gif"
+               id="org.nhan.pipeAction"
+               label="&amp;Pipeline Browser"
+               menubarPath="Pipeline/test"
+               toolbarPath="callGroup"
+               tooltip="Call test pipeline"/>
+      </actionSet>
    </extension>
 
 </plugin>

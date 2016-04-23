@@ -3,19 +3,7 @@
 	<classpathentry path="src" kind="src"/>
 	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true" kind="con"/>
 	<classpathentry path="org.eclipse.pde.core.requiredPlugins" kind="con"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/eclipse-equinox-common-3.5.0.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/axis.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/commons-discovery.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/commons-logging.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/jaxrpc.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/log4j-1.2.8.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/saaj.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/wsdl4j.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/xercesImpl.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/asix/xmlParserAPIs-2.5.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/jetty/jetty-6.1.1.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/jetty/jetty-util-6.1.1.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/jetty/servlet-api-2.5-6.1.1.jar" exported="true" kind="lib"/>
-	<classpathentry path="C:/Documents and Settings/XPMUser/Desktop/LUANVAN_GIT/trunk/luanvan/lib/dom4j-1.6.1.jar" exported="true" kind="lib"/>
+	<classpathentry path="lib/dom4j-1.6.1.jar" kind="lib"/>
+	<classpathentry path="lib/start.jar" kind="lib"/>
 	<classpathentry path="bin" kind="output"/>
 </classpath>

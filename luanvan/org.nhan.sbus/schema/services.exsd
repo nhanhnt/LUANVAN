@@ -45,7 +45,7 @@
    <element name="service">
       <complexType>
          <sequence>
-            <element ref="service" minOccurs="1" maxOccurs="unbounded"/>
+            <element ref="operation" minOccurs="1" maxOccurs="unbounded"/>
          </sequence>
          <attribute name="name" type="string" use="required">
             <annotation>

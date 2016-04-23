@@ -5,8 +5,12 @@ Bundle-SymbolicName: org.nhan.pipeline; singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: org.nhan.pipeline.PipelinePlugin
 Bundle-Localization: plugin
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
- org.nhan.services,
- org.example
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.nhan.sbus,
+ org.nhan.webservice
 Eclipse-AutoStart: true
+Bundle-ClassPath: .,lib/dom4j-1.6.1.jar,
+ lib/jaxen-1.1-beta-8.jar
+Export-Package: org.nhan.pipeline,
+ org.nhan.pipeline.actions

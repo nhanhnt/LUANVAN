@@ -23,5 +23,32 @@
             name="Feed Service"
             wsdd="schema/feeds.wsdd"/>
    </extension>
+   <extension
+         point="org.nhan.sbus.services">
+      <service
+            class="org.example.Arithmatics"
+            name="org.example.arithmatics">
+         <operation
+               name="multiply"
+               returns="int">
+            <parameter
+                  name="first"
+                  type="int"/>
+            <parameter
+                  name="second"
+                  type="int"/>
+         </operation>
+         <operation
+               name="add"
+               returns="int">
+            <parameter
+                  name="first"
+                  type="int"/>
+            <parameter
+                  name="second"
+                  type="int"/>
+         </operation>
+      </service>
+   </extension>
 
 </plugin>

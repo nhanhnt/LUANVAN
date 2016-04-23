@@ -11,6 +11,7 @@ Eclipse-AutoStart: true
 Export-Package: javax.servlet,
  javax.servlet.http,
  org.apache.axis.client,
+ org.example,
  org.nhan.sbus
 Bundle-ClassPath: .,
  lib/dom4j-1.6.1.jar,

@@ -5,7 +5,6 @@ import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
 
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
@@ -22,7 +21,7 @@ import org.dom4j.Text;
 import org.dom4j.io.DocumentResult;
 import org.dom4j.io.DocumentSource;
 import org.dom4j.io.SAXReader;
-import org.nhan.services.Call;
+import org.nhan.sbus.Call;
 
 
 public class Pipeline {
@@ -161,6 +160,7 @@ public class Pipeline {
 	    for ( int i = 0, size = body.nodeCount(); i < size; i++ ) {
             Node node = body.node(i);
             String name = node.getName();
+            System.out.println("Name : "+i+ " : "+name);
             if (null != name){
             	// the sub-node is aso a call
             	if (name.startsWith("call")){

@@ -4,125 +4,26 @@
 		<parameters>
 			<parameter name="input" type="int"/>
 		</parameters>
-		<call service="at.slife.test" operation="multiply" returns="int">
+		<call service="org.example.arithmatics" operation="multiply" returns="int">
 	    	<parameter type="int">{input}</parameter>
 	    	<parameter type="int">{input}</parameter>
-		</call>
-		<serialize type="xml"/>
-	</pipeline>
-	
-	<pipeline name="query">
-		<parameters>
-			<parameter name="predicate" type="String"/>
-			<parameter name="format" type="String"/>
-		</parameters>
-		<call service="at.slife.query" operation="runQuery" returns="String">
-			<parameter type="string">
-				<![CDATA[	
-				PREFIX  rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-				PREFIX  rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
-				PREFIX  owl:    <http://www.w3.org/2002/07/owl#>
-				PREFIX  daml:   <http://www.daml.org/2001/03/daml+oil#>
-				PREFIX  google: <http://www.ifs.tuwien.ac.at/slife-google#>
-					
-				SELECT  ?subject ?object
-				WHERE   { ?subject ]]> 
-				{predicate}
-				<![CDATA[ ?object } ]]>
-			</parameter>
-			<parameter type="string">{format}</parameter>
-		</call>
-		<transform xsl="triple.xsl"/>
-		<serialize service="at.slife.browser" operation="render"/>
-	</pipeline>
-
-	<pipeline name="itemTimeline">
-		<parameters/>
-		<call service="at.slife.query" operation="runQuery" returns="String">
-			<parameter type="string">
-				<![CDATA[	
-				PREFIX  rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-				PREFIX  rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
-				PREFIX  owl:    <http://www.w3.org/2002/07/owl#>
-				PREFIX  daml:   <http://www.daml.org/2001/03/daml+oil#>
-				PREFIX  google: <http://www.ifs.tuwien.ac.at/slife-google#>
-					
-				SELECT  ?subject ?object
-				WHERE   { ?subject ]]> 
-				{predicate}
-				<![CDATA[ ?object } ]]>
-			</parameter>
-			<parameter type="string">xml</parameter>
-		</call>
-		<transform xsl="triple.xsl"/>
-		<serialize service="at.slife.timeseries" operation="renderTime"/>
+		</call>		
+		<transform xsl="test1.xsl"/>
 	</pipeline>	
-
-	<pipeline name="test1">
+	<pipeline name="combined" serialization="xml">
 		<parameters>
-			<parameter name="a123" type="int"/>
-			<parameter name="b" type="int"/>
+			<parameter name="first" type="int"/>
+			<parameter name="second" type="intt"/>
 		</parameters>
-		<call service="at.slife.test" operation="add" returns="int">
-	    	<parameter type="int">{a123}</parameter>
-	        <parameter type="int">{b}</parameter>
+		<call service="org.example.arithmatics" operation="add" returns="int">
+	    	<parameter type="int">{first}</parameter>
+	    	<parameter type="int">{second}</parameter>
 		</call>
-		<transform xsl="test.xsl"/>
-		<serialize type="xml"/>
-	</pipeline>
-	
-	<pipeline name="simple">
-		<parameters/>
-		<call id="first" service="at.slife.test" operation="multiply" returns="int">
-	    	<parameter type="int">5</parameter>
-	    	<parameter type="int">10</parameter>
-		</call>
-		<transform xsl="test.xsl"/>
-		<serialize type="xml"/>
-	</pipeline>
-	
-	<pipeline name="sample">
-		<parameters>
-			<parameter name="a" type="int"/>
-			<parameter name="b" type="int"/>
-		</parameters>
-		<call id="node" service="at.slife.test" operation="multiply" returns="int">
-	    	<parameter type="int">{a}</parameter>
-	    	<parameter type="int">{b}</parameter>
-		</call>
-		<call id="node" service="at.slife.test" operation="add" returns="int">
-	    	<parameter type="int">{b}</parameter>
-	    	<parameter type="int">
-	    		<call service="at.slife.pipeline" operation="complex:square">
-	    			<parameter type="int">{b}</parameter>
-	    		</call>
-	    	</parameter>
-		</call>
-		<transform xsl="transformer.xsl"/>
-		<call id="node" service="at.slife.test@localhost" operation="add" returns="int">
-			<parameter type="int">{xpath:/html/body/number[1]/text()}</parameter>
-			<parameter type="int">{xpath:/html/body/number[2]/text()}</parameter>
-		</call>
-		<serialize type="xml"/>
-	</pipeline>
-	<pipeline name="check">
-		<parameters>
-			<parameter name="acccessCode" type="string"/>
-			<parameter name="blz" type="string"/>
-			<parameter name="account" type="string"/>
-			<parameter name="country" type="string"/>
-		</parameters>
-		<call service="at.slife.wsrep" operation="callWS" returns="string"> <!--  returns a soap response -->
-			<parameter name="wsdl" type="string">test.wsdl</parameter>
-			<parameter name="service" type="string">accountService</parameter>
-			<parameter name="port" type="string">Account</parameter>
-			<parameter name="operation" type="string">check</parameter>
-	    	<parameter type="string">{acccessCode}</parameter>
-	    	<parameter type="string">{blz}</parameter>
-	    	<parameter type="string">{account}</parameter>
-	    	<parameter type="string">{country}</parameter>
-		</call>
-		<serialize type="xml"/>
+		<call service="org.example.arithmatics" operation="multiply" returns="int">
+	    	<parameter type="int">{first}</parameter>
+	    	<parameter type="int">{second}</parameter>
+		</call>			
+		<transform method="xml" stylesheet="result.xsl"/>
 	</pipeline>
 </pipelines>
 

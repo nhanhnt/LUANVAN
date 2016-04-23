@@ -25,7 +25,7 @@ public class PipelineServlet extends HttpServlet {
 
 		Object result = null;
 		try {
-			result = MessageHandler.getDefault().invoke("at.slife.pipeline",
+			result = MessageHandler.getDefault().invoke("org.nhan.pipeline",
 					"invokePipe", new Object[] { pipeName, xmlParams });
 		} catch (Exception e) {
 			e.printStackTrace();
