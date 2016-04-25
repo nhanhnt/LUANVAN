@@ -15,9 +15,9 @@ import org.osgi.framework.BundleContext;
  */
 public class PipelinePlugin extends AbstractUIPlugin {
 
-	//The shared instance.
+	// The shared instance.
 	private static PipelinePlugin plugin;
-	
+
 	/**
 	 * The constructor.
 	 */
@@ -48,20 +48,28 @@ public class PipelinePlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * Returns an image descriptor for the image file at the given
-	 * plug-in relative path.
-	 *
-	 * @param path the path
+	 * Returns an image descriptor for the image file at the given plug-in
+	 * relative path.
+	 * 
+	 * @param path
+	 *            the path
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
-		return AbstractUIPlugin.imageDescriptorFromPlugin("org.nhan.pipeline", path);
+		return AbstractUIPlugin.imageDescriptorFromPlugin("org.nhan.pipeline",
+				path);
 	}
-	 protected static File getResource(String res) throws IOException {
-	        Path path = new Path(res);
-	        URL url = Platform.find(plugin.getBundle(), path);
-	        url = Platform.resolve(url);
-	        System.out.println("Plugin is : "+ plugin);
-	        return new File(url.getFile());
-	    }
+
+	protected static File getResource(String res){
+		try {
+			Path path = new Path(res);
+			URL url = Platform.find(plugin.getBundle(), path);
+			url = Platform.resolve(url);
+			System.out.println("Plugin run : " + plugin);
+			return new File(url.getFile());
+		} catch (Exception e) {
+			//System.out.println("vo day" + e.toString());
+		}
+		return null;
+	}
 }

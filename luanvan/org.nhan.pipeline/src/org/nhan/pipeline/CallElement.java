@@ -153,6 +153,7 @@ public class CallElement {
 				paramValue = pipe.runXPathQuery(theParam.substring(start + 6,
 						end));
 			} else {
+				//System.out.println("TheParam : "+theParam);
 				int start = theParam.indexOf("{");
 				int end = theParam.indexOf("}");
 				paramValue = pipe.getParameterValue(theParam.substring(
@@ -164,13 +165,12 @@ public class CallElement {
 		return paramValue;
 	}
 
-	
 	public String invoke() {
 		System.out.println("invoking : " + serviceName + " ;operation : "
 				+ operationName);
-		for (Object parameter : parameters) {
-			System.out.println("\tparameter : " + parameter.toString());
-		}
+//		for (Object parameter : parameters) {
+//			System.out.println("\tparameter : " + parameter.toString());
+//		}
 
 		Object result = null;
 
@@ -184,8 +184,8 @@ public class CallElement {
 			result = subPipe.processPipeline();
 		} else {
 			Call client = new Call(serviceName);
-//			System.out.println("Services: " + serviceName + " --- "
-//					+ operationName);
+			// System.out.println("Services: " + serviceName + " --- "
+			// + operationName);
 			if (serviceName.equals("org.nhan.webservice")
 					&& operationName.equals("wsCall")) {
 				System.out.println("ooooooooooooo0: ");
@@ -216,7 +216,7 @@ public class CallElement {
 			}
 
 		}
-		System.out.println("Result is:" + result);
+		// System.out.println("Result is:" + result);
 
 		return createNode(result);
 	}
@@ -248,10 +248,13 @@ public class CallElement {
 	 * @return the content wrapped in elemntID
 	 */
 	public String createNode(Object content) {
-		if (null != elementID && elementID.length() > 0)
+		// System.out.println("Element : "+ elementID);
+		if (null != elementID && elementID.length() > 0) {
 			return "<" + elementID + ">" + content + "</" + elementID + ">";
-		else
+		} else {
 			return "" + content;
+		}
+
 	}
 
 	/**

@@ -139,15 +139,6 @@ public class Pipeline {
 		return pipeSpace;
 	}
 
-	/**
-	 * invokes the named pipeline with given parameters
-	 * 
-	 * @param pipeName
-	 *            name of th epipeline to be invoked
-	 * @param xmlParams
-	 *            pipeline parameters
-	 * @return pipeline process results as string
-	 */
 	public String invokePipe(String pipeName, String xmlParams) {
 		result = "";
 		loadPipeline(pipeName);
@@ -164,7 +155,7 @@ public class Pipeline {
 		for (int i = 0, size = body.nodeCount(); i < size; i++) {
 			Node node = body.node(i);
 			String name = node.getName();
-			// System.out.println("Name : "+i+ " : "+name);
+			// System.out.println("Name : " + i + " : " + name);
 			if (null != name) {
 				// the sub-node is aso a call
 				if (name.startsWith("call")) {
@@ -175,28 +166,38 @@ public class Pipeline {
 					else
 						result += call.invoke();
 
-					// System.out.println("Final result is : " + result);
+					 System.out.println("Result: ");
+					 System.out.println(result);
 				}
 				// the next node is an XSLT transformation
 				else if (name.equals("transform")) {
-					//System.out.println("Vo Transform : ");
+					// System.out.println("Vo Transform : ");
 					Element elm = (Element) node;
-					//System.out.println("file: "+elm.attributeValue("xsl"));
+					// System.out.println("file: "+elm.attributeValue("xsl"));
 					transform(elm.attributeValue("xsl"));
-					
-					
 				}
 				// the pipeline process is finished, and result should be
 				// serializes
 				else if (name.equals("serialize")) {
 					Element elm = (Element) node;
+					// System.out.println("Vo serialize : "
+					// + elm.attributeValue("service"));
 					// call the relevant serializer (browser, form, xml, etc)
-					Call client = new Call(elm.attributeValue("service"));
+					// Call client = new Call(elm.attributeValue("service"));
+					Call client = new Call("org.example.arithmatics");
 					try {
+						// System.out.println("getResultDocument:
+						// "+getResultDocument().asXML());
 						Object[] content = { getResultDocument().asXML() };
-						client.invoke(elm.attributeValue("operation"), content);
+						// client.invoke(elm.attributeValue("operation"),
+						// content);
+						// client.invoke("add", content);
+						// System.out.println("KQ day : "+client.invoke("add",
+						// new Double(4.5),new Double(3.4)));
 					} catch (Exception e) {
-						e.printStackTrace();
+						System.out.println("Loi processPipeline ->serialize : "
+								+ e.toString());
+						// e.printStackTrace();
 					}
 
 				}
@@ -264,12 +265,13 @@ public class Pipeline {
 
 		File dir = null;
 
-		try {
-			dir = PipelinePlugin.getResource("pipelines");
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-
+		// try {
+		// dir = PipelinePlugin.getResource("pipelines");
+		// } catch (IOException e1) {
+		//			
+		// e1.printStackTrace();
+		// }
+		dir = PipelinePlugin.getResource("pipelines");
 		SAXReader reader = new SAXReader();
 
 		callMap = DocumentHelper.createDocument();
@@ -282,11 +284,12 @@ public class Pipeline {
 			String fileName = files[i].getName();
 			if (fileName.toUpperCase().endsWith(".XML")) {
 				String prefix = fileName.substring(0, fileName.indexOf('.'));
-
+				//System.out.println("Doc ten file simple.xml ra: "+ fileName);
 				try {
 					Document doc = reader.read(files[i]);
+					//System.out.println("Document: "+ doc);
 					Element pipes = doc.getRootElement();
-
+					//System.out.println("Element: "+ pipes);					
 					for (int j = 0, size = pipes.nodeCount(); j < size; j++) {
 						Node node = pipes.node(j);
 						if (null != node && node.hasContent()) {
@@ -313,12 +316,10 @@ public class Pipeline {
 	 *            name of the XSL file
 	 */
 	public void transform(String xslFile) {
-		File xsl = null;
-		
+		File xsl = null;		
 		try {
-			System.out.println("Style is : " + PipelinePlugin.getResource("styles/" + xslFile));
 			xsl = PipelinePlugin.getResource("styles/" + xslFile);
-			
+			// System.out.println("OK-XSL : " + xsl);
 			// load the transformer using JAXP
 			TransformerFactory factory = TransformerFactory.newInstance();
 			Transformer transformer;
@@ -328,31 +329,24 @@ public class Pipeline {
 			DocumentSource source = new DocumentSource(getResultDocument());
 			DocumentResult target = new DocumentResult();
 			transformer.transform(source, target);
-
+			// System.out.println("target: " + getResultDocument());
 			// return the transformed document
 			result = target.getDocument().getRootElement().asXML();
-			System.out.println("transform: " + result);
-		} catch (IOException e1) {
-			e1.printStackTrace();
+			//System.out.println("transform: " + source);
 		} catch (TransformerConfigurationException e) {
 			e.printStackTrace();
+			System.out.println("TransformerConfigurationException is : "
+					+ e.toString());
 		} catch (TransformerException e) {
 			e.printStackTrace();
+			System.out.println("TransformerException is : " + e.toString());
 		}
 	}
 
-	/**
-	 * running an XPATH query on the results to extract parameter values for
-	 * next calls
-	 * 
-	 * @param xpathQuery
-	 *            the XPATH query string
-	 * @return the selected part of pipeline result as string
-	 */
 	public String runXPathQuery(String xpathQuery) {
 		String items = "";
 		List list = getResultDocument().selectNodes("/result" + xpathQuery);
-
+		System.out.println("vo day");
 		boolean isArray = false;
 		if (list.size() > 1)
 			isArray = true;
@@ -374,7 +368,7 @@ public class Pipeline {
 		}
 		return items;
 	}
-
+;
 	/**
 	 * returns the pipeline results, the results are stored locally in this
 	 * class and will be returned to the calling program in XML format
@@ -383,12 +377,13 @@ public class Pipeline {
 	 */
 	public Document getResultDocument() {
 		SAXReader reader = new SAXReader();
-		Document doc = null;
+		Document doc = null;		
 		try {
 			if (result.startsWith("<?xml"))
 				result = result.substring(result.indexOf("?>") + 2);
 			doc = reader.read(new StringReader("<result>" + result
 					+ "</result>"));
+
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}

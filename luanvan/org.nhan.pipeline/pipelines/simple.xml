@@ -4,12 +4,21 @@
 		<parameters>
 			<parameter name="input" type="double"/>
 		</parameters>
-		<call service="org.example.arithmatics" operation="multiply" returns="double">
+		<call id="result" service="org.example.arithmatics" operation="multiply" returns="double">
 	    	<parameter type="double">{input}</parameter>
 	    	<parameter type="double">{input}</parameter>
 		</call>		
-		<transform xsl="test.xsl"/>
+		<transform xsl="test2.xsl"/>
 		<serialize type="xml"/>
+	</pipeline>
+	<pipeline name="square2">
+		<parameters>
+			<parameter name="input" type="double"/>
+		</parameters>
+		<call service="org.example.arithmatics" operation="multiply" returns="double">
+	    	<parameter type="double">{input}</parameter>
+	    	<parameter type="double">{input}</parameter>
+		</call>				
 	</pipeline>	
 	
 	<pipeline name="combined" serialization="xml">
@@ -17,33 +26,84 @@
 			<parameter name="first" type="double"/>
 			<parameter name="second" type="double"/>
 		</parameters>
-		<call service="org.example.arithmatics" operation="add" returns="double">
+		<call id="firstCall" service="org.example.arithmatics" operation="add" returns="double">
 	    	<parameter type="double">{first}</parameter>
-	    	<parameter type="double">{second}</parameter>
+	    	<parameter type="double">2.0</parameter>
 		</call>
-		<call service="org.example.arithmatics" operation="multiply" returns="double">
+		<call id="secondCall" service="org.example.arithmatics" operation="multiply" returns="double">
 	    	<parameter type="double">{first}</parameter>
 	    	<parameter type="double">{second}</parameter>
-		</call>			
-		<transform xsl="test2.xsl"/>
+		</call>	
+		<transform xsl="test1.xsl"/>
 		<serialize type="xml"/>
 	</pipeline>
 	
 	<pipeline name="nested" serialization="xml">
 		<parameters>
-			<parameter name="input" type="double"/>			
+			<parameter name="input" type="double"/>
 		</parameters>
-		<call service="org.example.arithmatics" id="parent" operation="multiply" returns="double">
+		<call id="parent" service="org.example.arithmatics" operation="multiply" returns="double">
 	    	<parameter type="double">2.0</parameter>
-	    	<parameter>
+	    	<parameter type="double">
 	    		<call service="org.example.arithmatics" operation="add" returns="double">
 	    			<parameter type="double">{input}</parameter>
-	    			<parameter type="double">15.0</parameter>
-				</call>	    		
+	    			<parameter type="double">5.0</parameter>
+				</call>  		
+	    	</parameter>
+		</call>		
+		<transform xsl="test2.xsl"/>
+		<serialize type="xml"/>
+	</pipeline>
+	
+	<pipeline name="pipeswithinpipes">
+		<parameters>
+			<parameter name="first" type="double"/>
+			<parameter name="second" type="double"/>
+		</parameters>		
+		<call id="node" service="org.example.arithmatics" operation="add" returns="double">
+	    	<parameter type="double">{first}</parameter>
+	    	<parameter type="double">
+	    		<call service="org.nhan.pipeline" operation="simple:square2" returns="double">
+	    			<parameter type="double">7.0</parameter>
+	    			<parameter type="double">5.0</parameter>
+	    		</call>
 	    	</parameter>
 		</call>
+		<transform xsl="test2.xsl"/>
+		<serialize type="xml"/>
+	</pipeline>
+	
+	<pipeline name="xpath">
+		<parameters>
+			<parameter name="first" type="double"/>
+			<parameter name="second" type="double"/>
+		</parameters>
+		<call id="node" service="org.example.arithmatics" operation="add" returns="double">
+	    	<parameter type="double">{first}</parameter>
+	    	<parameter type="double">2.0</parameter>
+		</call>	
+		<transform xsl="transformer.xsl"/>
+		<call id="node" service="org.example.arithmatics@localhost" operation="multiply" returns="double">
+	    	<parameter type="double">{first}</parameter>
+	    	<parameter type="double">
+	    		{xpath:/html/body/number[1]/text()}
+	    	</parameter>
+		</call>
+		<serialize type="xml"/>
+	</pipeline>
+	
+	<pipeline name="condition">
+		<parameters>
+			<parameter name="input" type="double"/>			
+		</parameters>
+		<xsl:if test="{input}>2">
+			<call id="result" service="org.example.arithmatics" operation="multiply" returns="double">
+	    		<parameter type="double">{input}</parameter>
+	    		<parameter type="double">2.0</parameter>
+			</call>
+		</xsl:if>
 		<transform xsl="test3.xsl"/>
 		<serialize type="xml"/>
 	</pipeline>
+	
 </pipelines>
-
