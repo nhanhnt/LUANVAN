@@ -13,7 +13,7 @@
                   name="wsdlLoc"
                   type="string"/>
             <parameter
-                  name="org.nhan.webservice.parameter9"
+                  name="serviceName"
                   type="string"/>
             <parameter
                   name="portTypeName"
