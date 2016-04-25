@@ -46,9 +46,11 @@ public class Call {
 			throw new IllegalArgumentException(
 					"Service or operation name must NOT be null");
 
-		else
+		else {
 			return MessageHandler.getDefault().invoke(service, operation,
 					params);
+		}
+
 	}
 
 	public void invokeAsyn(final ICallback callback, final Object... params) {
