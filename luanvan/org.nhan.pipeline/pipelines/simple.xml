@@ -92,18 +92,6 @@
 		<serialize type="xml"/>
 	</pipeline>
 	
-	<pipeline name="condition">
-		<parameters>
-			<parameter name="input" type="double"/>			
-		</parameters>
-		<xsl:if test="{input}>2">
-			<call id="result" service="org.example.arithmatics" operation="multiply" returns="double">
-	    		<parameter type="double">{input}</parameter>
-	    		<parameter type="double">2.0</parameter>
-			</call>
-		</xsl:if>
-		<transform xsl="test3.xsl"/>
-		<serialize type="xml"/>
-	</pipeline>
+	
 	
 </pipelines>

@@ -23,7 +23,7 @@ public class PipelineAction implements IWorkbenchWindowActionDelegate {
 	public void run(IAction action) {
 		if (window == null)
 			return;		
-		Pipeline pipe = new Pipeline("simple:condition");
+		Pipeline pipe = new Pipeline("simple:xpath");
 		String[] params = {"4","5"};
 		pipe.setParameterValues(params);
 		pipe.processPipeline();
